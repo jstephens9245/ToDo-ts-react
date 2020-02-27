@@ -1,0 +1,73 @@
+@import "../../../commonStyles/colorPalette";
+
+.full-page-spinner-container {
+  & .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+    & > span {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 4px;
+      animation: loading 2s linear infinite;
+    }
+
+    & > span:nth-child(1) {
+      background-color: #fd3f39;
+      animation-delay: 0s
+    }
+    & > span:nth-child(2) {
+      background-color: #ffcb2f;
+      animation-delay: -0.667s
+    }
+    & > span:nth-child(3) {
+      background-color: #53da6a;
+      animation-delay: -1.33s
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    12.5% {
+      top: 0;
+      left: 50%
+    }
+    25% {
+      top: 0;
+      left: 50%;
+    }
+    37.5% {
+      top: 50%;
+      left: 50%;
+    }
+    50% {
+      top: 50%;
+      left: 50%;
+    }
+    62.5% {
+      top: 50%;
+      left: 0;
+    }
+    75% {
+      top: 50%;
+      left: 0;
+    }
+    82.5% {
+      top: 0;
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+
+}

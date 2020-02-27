@@ -1,0 +1,89 @@
+/* autoprefixer grid: autoplace */
+@import "../../../commonStyles/colorPalette";
+
+.accordion {
+  display: grid;
+  grid-template-columns: 3.5rem auto;
+  grid-template-rows: auto auto;
+  margin-bottom: 10px;
+
+   &  > .contents {
+    margin: 10px 0px 20px 0px;
+    overflow: hidden;
+    /* When this component is rendered, the max-height will be set to the height of its contents
+      in the TSX - this value is just a failsafe */
+    max-height: 0px;
+    transition: max-height 300ms ease-out;
+  }
+
+  .contents-open {
+    margin: 10px 0px 20px 0px;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 300ms ease-in;
+  }
+
+  .icon-container {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 39px;
+    height: 39px;
+    background-size: cover;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .connecting-line-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .connecting-line {
+    border-left: 1px solid $card-border;
+    min-height: 30px;
+  }
+
+  .heading {
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .accordion_header_custom-content {
+    display: inline-flex;
+    justify-content: space-between;
+    width: calc(100% - 1rem);
+  }
+
+  .accordion__header__chevron {
+    transition-duration: 200ms;
+    width: 1rem;
+  }
+}
+
+.accordion.no-icon {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+
+.accordion.open {
+  .step-accordion.contents {
+    max-height: 999px;
+  }
+
+  .accordion__header__chevron {
+    transform: scaleY(-1);
+  }
+
+  .project-header {
+    border-bottom:1px solid $color-grey-light;
+  }
+}
+
+.accordion:last-child {
+  .connecting-line {
+    border-left: 0px;
+  }
+}

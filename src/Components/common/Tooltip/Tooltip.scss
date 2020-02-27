@@ -1,0 +1,175 @@
+@import '../../../commonStyles/colorPalette';
+@import '../../../commonStyles/breakpoints';
+@import '../../../commonStyles/mixins';
+
+//custom dte theme for tippy.js tooltip
+
+.tooltip-body {
+  cursor: pointer;
+  display: inline-block;
+}
+.tippy-tooltip.dte-theme {
+  font-size: 12px;
+  padding: 0.75rem;
+  color: $color-white;
+  background: $primary-brand-blue;
+  border: 1px solid white;
+  border-radius: 0;
+}
+
+.tippy-tooltip.dte-theme[data-placement^="top"] .tippy-arrow {
+  border-top-color: $primary-brand-blue;
+}
+.tippy-tooltip.dte-theme[data-placement^="bottom"] .tippy-arrow {
+  border-bottom-color: $primary-brand-blue;
+}
+.tippy-tooltip.dte-theme[data-placement^="left"] .tippy-arrow {
+  border-left-color: $primary-brand-blue;
+}
+.tippy-tooltip.dte-theme[data-placement^="right"] .tippy-arrow {
+  border-right-color: $primary-brand-blue;
+}
+
+.tippy-tooltip.dte-theme .tippy-svg-arrow {
+  fill: $primary-brand-blue;
+}
+
+
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  .content {
+    @include box-shadow();
+    position: absolute;
+    font-size: 12px;
+    left: 50%;
+    bottom: 2rem;
+    padding: 0.75rem;
+    color: $color-white;
+    background: $primary-brand-blue;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    white-space: nowrap;
+    &:before {
+      content: '\A';
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      border-style: solid;
+      border-width: 8px 8px 8px 0;
+      border-color: transparent $primary-brand-blue transparent transparent;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+  }
+}
+// styling for calendar inside the tooltip
+// being held here to re-use tooltip styling stucture above
+.calendar-tooltip {
+  @extend .tooltip;
+  left: 1px;
+  .content {
+    background: $color-white;
+    border-radius: 4px;
+    box-shadow: 0 2px 28px 0 rgba(64, 64, 64, 0.43);
+    border: solid 1px #dfe4ef;
+    color: $color-calendar-font;
+    min-width: 450px;
+    min-height: 322px;
+    @include mq('sm') {
+      min-width: auto;
+      min-height: auto;
+    }
+    // this shift's the calendar to the left side od the tooltip
+    @include mq('md') {
+      left: -14.1rem;
+      bottom: -7.5rem;
+    }
+    @include mq('sm') {
+      left: -9.9rem;
+      bottom: -7.5rem;
+    }
+    // ---------------
+
+    cursor: auto;
+    &::before {
+      content: none;
+    }
+    .DayPicker {
+      display: block
+    }
+    .DayPicker-wrapper {
+      outline: none;
+    }
+    .DayPicker-Month {
+      width: 100%;
+    }
+    .DayPicker-Day {
+      border-radius: 2px;
+      background-color: $color-greyed-dates;
+      border: 2px $color-white solid;
+    }
+    .DayPicker-Day:hover {
+      background-color: $color-greyed-dates !important;
+    }
+    .DayPicker-Caption {
+      text-align: center;
+    }
+    .DayPicker-NavButton--prev {
+      left: 1.5em;
+      top: 1.5em;
+      transform: rotate(-180deg);
+      background-image: url("../../../assets/bracket-right-blue.svg");
+      outline: none;
+    }
+    .DayPicker-NavButton--next {
+      top: 1.5em;
+      background-image: url("../../../assets/bracket-right-blue.svg");
+      outline: none;
+    }
+    .DayPicker-Day--today {
+      background-color: $color-greyed-dates;
+      color: $color-calendar-font;
+      font-weight: normal;
+    }
+    .DayPicker-Day--selected {
+      background-color: $primary-brand-active !important;
+      color: $color-white !important;
+      outline: none;
+    }
+    .DayPicker-Day--highlighted {
+      background-color: $color-white;
+      color: $color-calendar-font;
+    }
+    .DayPicker-Day--highlighted:hover {
+      background-color: $color-faded-select  !important;
+      color: $color-calendar-font !important;
+    }
+    .DayPicker-Day--outside {
+      background-color: $color-grey-light !important;
+      color: #8B9898;
+    }
+    .time {
+      background-color:#FFFFFF;
+      color:#2c3135;
+      font-size:12px;
+      border-radius:25px;
+      margin:2px;
+    }
+    .chevron-wrapper {
+      transition: opacity 200ms;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      &:hover {
+        opacity: 0.6;
+      }
+      img {
+        height: 1rem;
+      }
+    }
+  }
+}

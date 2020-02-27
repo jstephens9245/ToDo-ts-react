@@ -1,0 +1,28 @@
+@import "../../../commonStyles/colorPalette";
+@import "../../../commonStyles/breakpoints";
+
+
+.btn-primary {
+    color: $color-white;
+    transition: color 200ms ease;
+    min-width: 15rem;
+}
+
+.btn-primary:hover {
+    color: $color-white;
+    background-color: $primary-brand-blue;
+}
+
+button.btn-primary:disabled {
+    background-color: $color-disabled-body-copy;
+    color: $color-white;
+    cursor: auto;
+}
+
+@media all and (max-width: $mobileMaxWidth) {
+    .btn-primary {
+        padding: 0;
+        width: 100%;
+    }
+}
+

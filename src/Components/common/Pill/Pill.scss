@@ -1,0 +1,10 @@
+@import "../../../commonStyles/colorPalette";
+
+.pill {
+  padding: .15rem .5rem;
+  background-color: $color-grey-lighter;
+  border-radius: 25px;
+  font-size: 9px;
+  display: inline-block;
+  white-space: nowrap;
+}

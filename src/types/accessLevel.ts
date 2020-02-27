@@ -1,0 +1,1 @@
+export type AccessLevel = string; //"View" | "Edit" | "Invite" | "Admin" | "Owner";

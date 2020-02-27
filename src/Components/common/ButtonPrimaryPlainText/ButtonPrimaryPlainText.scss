@@ -1,0 +1,13 @@
+@import "../../../commonStyles/colorPalette";
+
+.btn-primary.plain-text-btn {
+    background: none;
+    color: $color-primary;
+    font-size: 1rem;
+    transition: color 200ms;
+    min-width: 10rem;
+}
+
+.btn-primary.plain-text-btn:hover {
+    color: $color-dte-blue;
+}

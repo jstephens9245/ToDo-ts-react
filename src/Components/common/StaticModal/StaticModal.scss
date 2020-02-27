@@ -1,0 +1,103 @@
+@import "../../../commonStyles/breakpoints";
+@import "../../../commonStyles/colorPalette";
+@import "../../../commonStyles/mixins";
+
+
+.static-modal {
+
+    &__close-button {
+        width: 32px;
+        height: 32px;
+        font-size: 28px;
+        border: 0px;
+        cursor: pointer;
+        background: url("../../../assets/icons-close-small-white.svg");
+        background-repeat: no-repeat;
+        background-color:pink;
+        // position: absolute;
+        // right: 1rem;
+        // top: -.5rem;      
+    }
+    &.open {
+        z-index: 2;
+        height: 100vh;
+        display:block;
+    }
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 174, 239, 0.9);
+    left:0; top:0; right:0; bottom:0;
+    z-index: 10;
+
+    & > .contents {
+        position: absolute;
+        width: 100%;
+        max-width: 70%;
+        left: 15%;
+        right: 15%;
+        top: 10%;
+        padding: 1rem 1rem 4rem 1rem;
+        z-index: 3;
+        user-select: text;
+        overflow: visible;
+    }
+    
+    & > .contents > .text {
+        background-color: $color-white;
+        padding: 1.5rem;
+        box-shadow: 0 2px 26px 5px rgba(0, 0, 0, 0.27);
+    }
+    
+    & > .contents > .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-size: 28px;
+        margin-bottom: 10px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    & > .contents > .heading > h1 {
+        color: white;
+        margin: 0px;
+    }
+    
+    & > .contents > .heading > button {
+        width: 32px;
+        height: 32px;
+        font-size: 28px;
+        border: 0px;
+        cursor: pointer;
+        background: url("../../../assets/icons-close-small-white.svg");
+        background-repeat: no-repeat;
+    }
+    .onConfirm-btn {
+        margin-right: 10px;
+    }
+}
+// .static-modal.modal {
+//     & > .email-non-valid {
+//         margin: auto;
+//         color: white; //$primaryColor;
+//         & .btn {
+//             background: blue; //$darkBlue;
+//             padding: 0 30px;
+//         }
+//         & a {
+//             color: blue; //$darkBlue;
+//             font-weight: bold;
+//         }
+//         & .text {
+//           font-size: 16px;
+//         }
+//         @include mq(1024px, "min") {
+//             width: 900px;
+//             text-align: center;
+//             & .text {
+//                 padding: 2.5rem;
+//               }
+//         }
+//     }
+// }

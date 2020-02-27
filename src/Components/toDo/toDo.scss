@@ -1,0 +1,368 @@
+$dark-gray: #333c4e;
+$light-gray: #7e8890;
+
+.toDo-container {
+  overflow:hidden;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  & h2 {
+    color: #FFFFFF
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+input:focus{
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.main-button-container {
+  //  position: absolute;
+  //  top: 40%;
+  //  font-size:1.8rem;
+  //  width: 100%;
+  //  text-align: center;
+  display: flex;
+  flex-flow: column;
+  & .main-button {
+    width: 23%;
+    margin: auto;
+    // flex: 1;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #FFFFA5;
+    color: #333333;
+    font-weight: bold;
+    font-family: "Permanent Marker";
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  & .main-button:hover {
+    background-color: #ffff59;
+    color: #333333;
+  }
+}
+
+.to-do-input-field {
+  width: 40%;
+  border-radius: 500px;
+  padding: 10px;
+  font-size: 1rem;
+}
+.active-tasks {
+  color: #FFFFA5;
+  margin-bottom: 20px;
+}
+
+.render-buttons {
+  margin-top: 5rem;
+  // text-align: center;
+  display: flex;
+  & .show-button {
+    // width: 60%;
+    flex: 1;
+    border-radius: 25px;
+    background-color: #FFFFA5;
+    color: #333333;
+    font-weight: bold;
+    font-family: "Permanent Marker";
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    margin: 0px 10px;
+  }
+}
+.to-do-items {
+  border: solid 3px white;
+  padding: .6rem;
+  border-radius: 25px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-button:hover {
+  background-color: #ffff59;
+  color: #333333;
+}
+
+.to-do-delete-btn {
+  border-radius: 25px;
+  color: #333333;
+  background: white;
+  font-weight: bold;
+  font-family: "Permanent Marker";
+  border: solid white 3px;
+  // float: right;
+  // margin-top: 1rem;
+}
+
+.to-do-delete-btn:hover {
+  border: solid 4px white;
+  // margin-top: .9rem;
+
+}
+
+.to-do-status-btn {
+  // position: absolute;
+  // top: calc(50% - 11.5px);
+  // left: calc(70% - 2px);
+  border-radius: 25px;
+  border: solid white 3px;
+  background: white;
+  margin-right: 10px;
+}
+
+.to-do-status-btn:hover {
+  border: solid 4px white;
+
+  // top: calc(50% - 12px);
+  // border: solid #333333 4px;
+}
+
+.border-line {
+  width: 90%;
+  border-bottom: 2px solid $light-gray;
+  margin: 0 auto;
+  margin-top: 3em;
+}
+
+.desc-container {
+  color: $dark-gray;
+  display: flex;
+}
+
+.desc {
+  width: 100%;
+  // flex: 1;
+  padding: 0.8em;
+  line-height: 1.5em;
+
+  & .todo {
+    color: white;
+    margin: 0;
+  }
+}
+.desc:nth-child(2) {
+  width: 100%;
+  padding: 0.8em;
+  line-height: 1.5em;
+  border-left: solid 2px $light-gray;
+}
+
+.desc-title{
+  width: 100%;
+  // flex: 1;
+  text-align:center;
+  font-weight: 300;
+  font-size:1.5rem;
+  color: #ffff;
+}
+
+.desc-content{
+  width: 100%;
+  min-height: 200px;
+  text-align: center;
+  font-weight: 300;
+  color: #333333;
+  font-size: 1rem;
+}
+
+
+// .desc-title{
+//   width: 100%;
+//   text-align:center;
+//   font-weight: 300;
+//   font-size:1.5rem;
+// }
+
+.right-desc-content{
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.team-desc {
+  display: none;
+}
+
+
+// @media screen and (min-device-width: 414px) {
+
+//   .main-button {
+//     width: 90%;
+//     font-size: 1.9rem;
+//   }
+
+// }
+
+
+// @media screen and (min-device-width: 768px) {
+
+//   .main-button-container {
+//     top: 50%;
+//   }
+
+//   .active-tasks {
+//     margin: auto;
+//   }
+
+//   .to-do-input-field {
+//     width: 60%;
+//     font-size: 2.5rem;
+//   }
+
+//   // .to-do-delete-btn {
+//   //
+//   // }
+//   //
+//   // .to-do-status-btn {
+//   //
+//   // }
+
+//   .main-button {
+//     width: 30%;
+//     font-size: 2.5rem;
+//   }
+
+//   .show-button {
+//     width: 30%;
+//     font-size: 2.5rem;
+//   }
+
+//   .delete-all-button {
+//     width: 30%;
+//     font-size: 2.5rem;
+//   }
+
+//   .desc-container {
+//     color: $dark-gray;
+//     display: flex;
+//     flex-direction: row;
+//     min-height: 60rem;
+//   }
+
+//   .left-desc {
+//     width: 50%;
+//     padding: 5%;
+//     padding-top: 1%;
+//     line-height: 3em;
+//     height: 28.8rem;
+
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
+
+//   .left-desc-title{
+//     text-align:left;
+//     font-weight: 300;
+//     font-size:2rem;
+//   }
+
+//   .left-desc-content{
+//     width: 100%;
+//     text-align: left;
+//     font-weight: 300;
+//     color: #333333;
+//     font-size: 1.5rem;
+//   }
+
+//   .right-desc {
+//     width: 45%;
+//     padding: 5%;
+//     padding-top: 1%;
+//     line-height: 3em;
+//     height: 28.8rem;
+
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//   }
+
+//   .right-desc-content{
+//     width: 100%;
+//     text-align: left;
+//     font-weight: 300;
+//     color: #333333;
+//     font-size: 1.5rem;
+//   }
+
+//   .right-desc-title{
+//     text-align:left;
+//     font-weight: 300;
+//     font-size:2rem;
+//   }
+
+//   .team-desc {
+//     display: block;
+//     position: fixed;
+//     bottom: 0%;
+//     width: 100%;
+//     background: rgba(0, 0, 0, 0.5);
+//     color: #fff;
+//     font-weight: 300;
+//     text-align: center;
+//     height: 4em;
+//     line-height: 4em;
+//     letter-spacing: 0.2rem;
+//   }
+
+// }
+
+// @media screen and (min-device-width: 1024px) {
+
+//   .main-button-container {
+//     top: 50%;
+//   }
+//   .input-container {
+//     // display: inline-block;
+//     margin: auto;
+//     width: 30%;
+//     margin-top: 10%;
+//     // padding: 10;
+//   }
+//   .form {
+//     display: grid;
+//     margin-top: 2.5rem;
+//   }
+//   .to-do-input-field {
+//     margin: auto;
+//     width: 20%;
+//     font-size: 2.5rem;
+//   }
+//   .main-button {
+//     width: 20%;
+//     font-size: 2.5rem;
+//     margin-top: 5rem;
+//     margin-right: 1rem;
+//   }
+//   .show-button {
+//     width: 15%;
+//     font-size: 2.5rem;
+//     margin-top: 5rem;
+//     margin-right: 1rem;
+//   }
+//   .delete-all-button {
+//     width: 15%;
+//     font-size: 2.5rem;
+//     margin-top: 5rem;
+//     margin-left: 1rem;
+//   }
+
+//   .border-line {
+//     margin-top: 15rem;
+//   }
+
+// }

@@ -1,0 +1,103 @@
+@import "../../../commonStyles/colorPalette";
+
+// /* Customize the label (the container) */
+.container {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container-square {
+  @extend .container;
+  display: block;
+  height: 18px;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: $color-white;
+  border: 1px solid $primary-brand-blue;
+}
+.checkmark-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: $color-white;
+  border: 1px solid $primary-brand-blue;
+  border-radius: 1.5px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark,
+.container:hover input ~ .checkmark-square {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: $primary-brand-blue;
+}
+.container input:checked ~ .checkmark-square {
+  background-color: $primary-brand-blue;
+  border-color: $primary-brand-blue;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after,
+.checkmark-square:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after,
+.container input:checked ~ .checkmark-square:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $color-white;
+}
+
+.container .checkmark-square:after {
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid $color-white;
+  // background-color: $color-dte-blue;
+  border-width: 0 1.5px 1.5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.label-right {
+  margin-left: 1.5rem;
+}

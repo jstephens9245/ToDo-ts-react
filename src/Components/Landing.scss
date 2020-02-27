@@ -1,0 +1,344 @@
+
+body {
+  background-color: #282c34;
+  font-size: 16px;
+}
+.App {
+  text-align: center;
+  // background-color: #282c34;
+
+  & .page-content {
+    visibility: hidden;
+    opacity: 0;
+    animation: visible 3s linear forwards;
+    animation-delay: 1.5s;
+  }
+  @keyframes visible {
+    0% {
+      visibility: hidden;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  @keyframes fade {
+    0% {
+      visibility: visible;
+      opacity: 1;
+    }
+    100% {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  & .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+    // background: white;
+    background-color: #282c34;
+    // -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    // 0px 6px 0px 4px rgba(0,0,0,0.1),
+    // 0px 9px 0px 6px rgba(0,0,0,0.1),
+    // 0px 12px 0px 8px rgba(0,0,0,0.1),
+    // 0px 15px 0px 10px rgba(0,0,0,0.1),
+    // 0px 18px 0px 12px rgba(0,0,0,0.1),
+    // 0px 21px 0px 14px rgba(0,0,0,0.1),
+    // 0px 24px 0px 16px rgba(0,0,0,0.1),
+    // 0px 27px 0px 18px rgba(0,0,0,0.1),
+    // 0px 30px 0px 20px rgba(0,0,0,0.1),
+    // 2px 11px 38px 11px rgba(0,0,0,0);
+
+    // box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    // 0px 6px 0px 4px rgba(0,0,0,0.1),
+    // 0px 9px 0px 6px rgba(0,0,0,0.1),
+    // 0px 12px 0px 8px rgba(0,0,0,0.1),
+    // 0px 15px 0px 10px rgba(0,0,0,0.1),
+    // 0px 18px 0px 12px rgba(0,0,0,0.1),
+    // 0px 21px 0px 14px rgba(0,0,0,0.1),
+    // 0px 24px 0px 16px rgba(0,0,0,0.1),
+    // 0px 27px 0px 18px rgba(0,0,0,0.1),
+    // 0px 30px 0px 20px rgba(0,0,0,0.1),
+    // 2px 11px 38px 11px rgba(0,0,0,0);
+
+    // animation: A3D-Effect 2s linear infinite;
+      animation: LoadingMove 2s linear forwards, fade 2s linear forwards;
+      animation-delay: 1s, 4s;
+    & > span {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 4px;
+      animation: loading 2s linear infinite, reSize 2s linear forwards;
+      transform: translate(25%, 25%);
+    }
+
+    & > span:nth-child(1) {
+      background-color: #fd3f39;
+      animation-delay: 0s, 1s
+    }
+    & > span:nth-child(2) {
+      background-color: #ffcb2f;
+      animation-delay: -0.667s, 1s
+    }
+    & > span:nth-child(3) {
+      background-color: #53da6a;
+      animation-delay: -1.33s, 1s
+    }
+    & > img {
+      @extend span;
+      background-color: #282c34;
+      height: 100px;
+      width: 100px;
+      pointer-events: none;
+      animation: App-logo-spin 2s linear infinite;
+    }
+  }
+  & .App-logo-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+  & .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+    // position: absolute;
+    // animation: App-logo-spin infinite 20s linear;
+  }
+
+  // @media (prefers-reduced-motion: no-preference) {
+  // }
+
+}
+
+.App-header {
+  // background-color: #282c34;
+  // min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  // background-color: #282c34;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes loading {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  12.5% {
+    top: 0;
+    left: 50%
+  }
+  25% {
+    top: 0;
+    left: 50%;
+  }
+  37.5% {
+    top: 50%;
+    left: 50%;
+  }
+  50% {
+    top: 50%;
+    left: 50%;
+  }
+  62.5% {
+    top: 50%;
+    left: 0;
+  }
+  75% {
+    top: 50%;
+    left: 0;
+  }
+  82.5% {
+    top: 0;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes LoadingMove {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  12.5% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+    height: 75px;
+    width: 75px;
+  }
+}
+
+@keyframes reSize {
+  0% {
+    height: 50px;
+    width: 50px;
+  }
+  12.5% {
+    height: 50px;
+    width: 50px;
+  }
+  100% {
+    height: 25px;
+    width: 25px;
+  }
+}
+
+@keyframes App-logo-spin {
+  0% {
+    transform: rotate(0deg);
+
+    top: 0;
+    left: 0;
+  }
+  25% {
+    // transform: rotate(360deg);
+    top: 0;
+    left: 50%
+  }
+  50% {
+    transform: rotate(360deg);
+    top: 50%;
+    left: 50%
+  }
+  75% {
+    // transform: rotate(0deg);
+    top: 50%;
+    left: 0;
+  }
+  100% {
+    transform: rotate(0deg);
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes A3D-Effect {
+  0% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1),
+    0px 18px 0px 12px rgba(0,0,0,0.1),
+    0px 21px 0px 14px rgba(0,0,0,0.1),
+    0px 24px 0px 16px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1),
+    0px 18px 0px 12px rgba(0,0,0,0.1),
+    0px 21px 0px 14px rgba(0,0,0,0.1),
+    0px 24px 0px 16px rgba(0,0,0,0.1);
+  }
+  12.5% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1),
+    0px 18px 0px 12px rgba(0,0,0,0.1),
+    0px 21px 0px 14px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1),
+    0px 18px 0px 12px rgba(0,0,0,0.1),
+    0px 21px 0px 14px rgba(0,0,0,0.1);
+  }
+  25% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1),
+    0px 18px 0px 12px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1),
+    0px 18px 0px 12px rgba(0,0,0,0.1);
+  }
+  37.5% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1),
+    0px 15px 0px 10px rgba(0,0,0,0.1);
+  }
+  50% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1),
+    0px 12px 0px 8px rgba(0,0,0,0.1);
+  }
+  62.5% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1),
+    0px 9px 0px 6px rgba(0,0,0,0.1);
+  }
+  75% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1),
+    0px 6px 0px 4px rgba(0,0,0,0.1);
+  }
+  82.5% {
+    -webkit-box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1);
+
+    box-shadow: 0px 3px 0px 2px rgba(0,0,0,0.1);
+  }
+  100% {
+    -webkit-box-shadow: none;
+
+    box-shadow: none;
+  }
+}

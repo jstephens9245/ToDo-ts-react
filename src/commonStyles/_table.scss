@@ -1,0 +1,53 @@
+@import "../../../commonStyles/colorPalette";
+@import "../commonStyles/breakpoints";
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+table > thead > tr > th {
+    font-size: 1.1rem;
+    color: $color-primary;
+    padding-bottom: 1rem;
+    width: 15rem;
+    vertical-align: top;
+}
+
+table > tbody > tr {
+    height: 3rem;
+}
+
+table > tbody > tr:nth-child(odd) {
+    background-color: $color-grey-lightest;
+}
+
+table > tbody > tr > td {
+    text-align: center;
+}
+
+table > tbody > tr > td:nth-child(1) {
+    text-align: left;
+    font-weight: bold;
+    font-size: .8rem;
+    padding: 1rem 0 1rem 1rem;
+    width: 20vw;
+}
+
+@media all and (max-width: $mobileMaxWidth) {
+    table {
+        margin: 0 -1rem 1rem -1rem;
+        width: 100vw;
+
+        thead {
+            border-bottom: 1px solid $color-grey-light;
+            margin-top: 1rem;
+
+            tr > th {
+                padding-left: 1rem;
+                text-align: left;
+            }
+        }
+    }
+}

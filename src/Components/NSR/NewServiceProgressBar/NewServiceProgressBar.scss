@@ -1,0 +1,140 @@
+/* autoprefixer grid: autoplace */
+@import "../../../commonStyles/colorPalette";
+@import "../../../commonStyles/breakpoints";
+@import "../../../commonStyles/mixins";
+
+.start-new-service-progress-bar {
+  background: transparent;
+  border: none;
+  & > main {
+    padding: 20px 0px;
+  }
+  .liner {
+    display: inline-block;
+    border-top: 1px solid $primary-brand-blue;
+    padding-right: 5px;
+    margin-top: 16px;
+    width: 100%;
+  }
+  &__cols,
+  &__cols--linked {
+    &__col {
+      margin: 0px 10px;
+
+      // We have to specify the grid columns below to comply with good ole IE11
+      &--status {
+        margin-bottom: 1rem;
+        min-width: 14rem;
+        grid-column: 3;
+        .progress-bar {
+          display: flex;
+        }
+      }
+      &--service-type {
+        min-width: 11rem;
+        grid-column: 2;
+      }
+      &--last-updated {
+        padding-left: 0.8rem;
+        grid-column: 4;
+        min-width: 12rem;
+
+        p {
+          color: $color-grey;
+        }
+      }
+      &--link {
+        margin-left: auto;
+        transition: opacity 200ms;
+        grid-column: 5;
+
+        img {
+          margin-top: 1.8rem;
+          height: 1.2rem;
+          margin-left: 3.3rem;
+        }
+      }
+      &--link:hover {
+        opacity: 0.6;
+      }
+      &--won {
+        min-width: 6rem;
+      }
+    }
+  }
+  .start-new-service-progress-bar-wrapper {
+    position: relative;
+    display: flex;
+    max-width: 82%;
+    margin: 0 auto;
+    @include mq('md') {
+        flex-wrap: wrap;
+    }
+  }
+  .start-new-service-progress-bar-text-wrapper {
+    position: relative;
+    display: flex;
+    max-width: 94%;
+    margin: 10px auto 0;
+    @include mq('md'){
+      flex-flow: column;
+      max-width: 82%;
+    }
+    & .service-step-container {
+      color: $color-black;
+      font-size: 16px;
+      font-weight: 600;
+      &.active {
+        color: $color-black;
+      }
+      &.completed {
+        color: $color-black;
+      }
+    }
+  }
+  .progress-bar {
+    display: flex;
+    flex: auto;
+  }
+  .service-step-container {
+    flex-grow: 1;
+    display: flex;
+    &.last-text {
+      flex-grow: 0;
+      @include mq('sm'){
+        flex-grow: 1;
+      }
+    }
+  }
+  .service-step-container:last-child {
+    flex-grow: 0;
+  }
+  .service-step {
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 16px;
+    color: $primary-brand-blue;
+    border: 1px solid $primary-brand-blue;
+    border-radius: 50%;
+    background-color: $task-progress-background;
+
+    &.active {
+      background-color: $primary-brand-blue;
+      border: 1px solid $primary-brand-blue;
+      color: $task-progress-background;
+    }
+    &.completed {
+      background-image: url("../../../assets/white-checkmark.svg");
+      background-color: $primary-brand-blue;
+      background-repeat: no-repeat;
+      color: transparent;
+      border: 1px solid $primary-brand-blue;
+    }
+  }
+  .last-updated {
+    @include mq('xl', 'min') {
+      margin-left: auto;
+    }
+  }
+}

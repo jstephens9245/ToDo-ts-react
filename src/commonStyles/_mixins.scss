@@ -1,0 +1,85 @@
+@import "./breakpoints";
+@import "./zindex";
+
+@mixin three-color-top-border {
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 12px;
+    // Currently, if you use this mixin in a folder that is not at the root level of the
+    // components folder, i.e., "{project root}/src/components/NewPage/MyComponent",
+    // this url will not resolve!
+    // TODO: fix that! Meanwhile, don't use urls in mixins!
+    background-image: url(../../assets/border.svg);
+    background-size: 100%;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 0 4px 4px 0 rgba(100, 100, 100, 0.3);
+}
+
+// MEDIA QUERIES
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+      $width: map_get($breakpoints, $width);
+      @if $type == max {
+          $width: $width - 1px;
+      }
+      @media only screen and (#{$type}-width: $width) {
+          @content;
+      }
+  }
+  @else {
+    @if $type == max {
+        $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+        @content;
+    }
+  }
+}
+
+@mixin ie-only(){
+  // IE 11
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    @content
+  }
+}
+
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+      color: $color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: $color;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: $color;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: $color;
+  }
+}
+
+@mixin flex-full-width(){
+  display: flex;
+  width: 100%;
+}
+
+// Z-INDEX
+@function z($name) {
+  @if index($z-indexes, $name) {
+      @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+      @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+      @return null;
+  }
+}
+@mixin flex-align($direction: row, $justify: center, $align: center){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}

@@ -1,0 +1,212 @@
+/* autoprefixer grid: autoplace */
+@import "./colorPalette";
+@import "./breakpoints";
+@import "./mixins";
+
+//TODO: remove pixel values, use relative units!
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif, 'Open Sans Semibold';
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: $color-body-copy;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+// TO-DO REFACTOR - these are being used globally but seem to be specific, needs to be investigated for correction
+h1, h2 {
+    color: $primary-brand-blue;;
+    font-weight: normal;
+    margin-bottom: 13px;
+    line-height: normal;
+}
+
+h1 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+}
+
+h2 {
+    font-size: 1.571rem;
+    margin-top: 0px;
+}
+
+h3 {
+    color:$primary-brand-blue;
+    font-size: 1.286rem;
+    margin-bottom: .7rem;
+    margin-top: .5rem;
+}
+
+h4 {
+    color:$primary-brand-blue;
+    font-size: 1.125rem;
+    margin: .5rem 0;
+}
+p {
+    margin-top: 0px;
+}
+
+.narrow {
+    margin: 1.571rem auto;
+
+    max-width: 950px;
+    height: 100%;
+    @include mq('lg'){
+        padding: 0 1.25rem;
+    }
+    @include mq('sm'){
+        padding: 0 1rem;
+        margin: 1.25rem auto;
+    }
+}
+
+hr {
+    border-top: 1px solid $card-border;
+    border-bottom: 0px;
+    margin: 20px 0px 20px 0px;
+}
+
+a {
+    color: $primary-brand-active;
+    cursor: pointer;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+.link-invert {
+    color: $primary-brand-blue;
+}
+
+a:hover {
+    color: $primary-brand-blue;
+}
+.link-invert:hover {
+    color: $primary-brand-active;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=number],
+select
+{
+    width: 100%;
+    font-size: 16px;
+    padding: 1px 1px 1px 10px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid $color-grey-light;
+    font-family: "Open Sans", sans-serif;
+    background-color: $color-white;
+}
+
+
+input[type=email]:focus,
+input[type=password]:focus {
+    outline-color: $primary-brand-blue;
+}
+
+input:invalid {
+    border: 1px solid $color-red;
+}
+
+button {
+    color: $color-white;
+    font-size: 18px;
+    height: 40px;
+    background-color: $primary-brand-active;
+    border: none;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    min-height: calc(100vh - 576px);
+    display: block;
+}
+
+.block-label, .block-value{
+    font-size: 12px;
+    font-weight: 600;
+}
+.block-label{
+    font-weight: 600;
+    margin-bottom: .35rem;
+}
+.table-date-col{
+    margin-left: auto;
+    @include mq('md'){
+        margin-left: 0;
+    }
+    @include mq('lg', 'min'){
+        min-width: 10rem;
+    }
+}
+.table-type-col{
+    min-width: 9rem;
+}
+.table-status-col{
+    min-width: 16rem;
+}
+.table-type-col, .table-wo-col{
+    @include mq('md'){
+        width: 40%;
+        min-width: 40%;
+    }
+}
+.table-wo-col, .table-status-col{
+    @include mq('md'){
+        width: 60%;
+        min-width: 60%;
+    }
+}
+.table-status-col, .table-date-col{
+    @include mq('xs'){
+        width: 100%;
+        min-width: 100%;
+    }
+}
+.no-break{
+    display: inline-block;
+}
+
+@media all and (max-width: $tabletMaxWidth) {
+    main {
+        min-height: 0;
+    }
+}
+
+@media all and (max-width: $mobileMaxWidth) {
+    ul {
+        padding-left: 1.5rem;
+    }
+}
+
+address{
+    font-style: normal;
+}
