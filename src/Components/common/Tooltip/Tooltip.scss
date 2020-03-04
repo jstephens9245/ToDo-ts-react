@@ -2,13 +2,13 @@
 @import '../../../commonStyles/breakpoints';
 @import '../../../commonStyles/mixins';
 
-//custom dte theme for tippy.js tooltip
+//custom ted theme for tippy.js tooltip
 
 .tooltip-body {
   cursor: pointer;
   display: inline-block;
 }
-.tippy-tooltip.dte-theme {
+.tippy-tooltip.ted-theme {
   font-size: 12px;
   padding: 0.75rem;
   color: $color-white;
@@ -17,20 +17,20 @@
   border-radius: 0;
 }
 
-.tippy-tooltip.dte-theme[data-placement^="top"] .tippy-arrow {
+.tippy-tooltip.ted-theme[data-placement^="top"] .tippy-arrow {
   border-top-color: $primary-brand-blue;
 }
-.tippy-tooltip.dte-theme[data-placement^="bottom"] .tippy-arrow {
+.tippy-tooltip.ted-theme[data-placement^="bottom"] .tippy-arrow {
   border-bottom-color: $primary-brand-blue;
 }
-.tippy-tooltip.dte-theme[data-placement^="left"] .tippy-arrow {
+.tippy-tooltip.ted-theme[data-placement^="left"] .tippy-arrow {
   border-left-color: $primary-brand-blue;
 }
-.tippy-tooltip.dte-theme[data-placement^="right"] .tippy-arrow {
+.tippy-tooltip.ted-theme[data-placement^="right"] .tippy-arrow {
   border-right-color: $primary-brand-blue;
 }
 
-.tippy-tooltip.dte-theme .tippy-svg-arrow {
+.tippy-tooltip.ted-theme .tippy-svg-arrow {
   fill: $primary-brand-blue;
 }
 

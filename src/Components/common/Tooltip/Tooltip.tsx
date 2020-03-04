@@ -53,10 +53,10 @@ const Tooltip: React.FunctionComponent<Props> = (props: Props): React.ReactEleme
     )
     :
     (
-      <Tippy content={<span>{props.tooltipBody}</span>} className="dte-theme">
+      <Tippy content={<span>{props.tooltipBody}</span>} className="ted-theme">
       <div className="tooltip-body">{props.children}</div>
     </Tippy>
-  
+
     )
   }
 
